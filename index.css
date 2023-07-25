@@ -47,6 +47,18 @@ body {
   width: 24px;
 }
 
+.navbar .hamburger {
+  display: none;
+}
+
+.navbar .bar {
+  background-color: black;
+  border-radius: 10px;
+  height: 4px;
+  margin: 3px;
+  width: 36px;
+}
+
 .project-grid {
   display: grid;
   gap: 16px;
@@ -156,6 +168,25 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: white;
+    box-sizing: border-box;
+    left: 0;
+    padding: 16px 24px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .navbar .right {
+    display: none;
+  }
+  .navbar .hamburger {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .project-grid {
     grid-template-areas:
       'eth eth'
@@ -166,6 +197,7 @@ body {
       'cup cup'
       'foam foam'
       'dimensional dimensional';
+    margin-top: 100px;
   }
   .project .overlay {
     font-size: 24px;
