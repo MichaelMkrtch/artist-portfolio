@@ -4,6 +4,7 @@ body {
 
 .project-grid {
   display: grid;
+  gap: 16px;
   grid-template-areas:
     'eth eth alphabet'
     'eth eth traveler'
@@ -11,6 +12,8 @@ body {
     'cup insta insta'
     'cup insta insta'
     'foam foam dimensional';
+  margin: 0 auto;
+  width: 90%;
 }
 
 #eth {
@@ -80,4 +83,31 @@ body {
 .project .overlay:hover {
   cursor: pointer;
   opacity: 1;
+}
+
+@media only screen and (max-width: 1100px) {
+  .project-grid {
+    grid-template-areas:
+      'eth eth'
+      'alphabet traveler'
+      'cube astro'
+      'insta insta'
+      'cup foam'
+      'dimensional dimensional';
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .project-grid {
+    grid-template-areas:
+      'eth eth'
+      'alphabet alphabet'
+      'traveler traveler'
+      'cube astro'
+      'insta insta'
+      'cup cup'
+      'foam foam'
+      'dimensional dimensional';
+  }
 }
