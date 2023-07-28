@@ -51,12 +51,67 @@ body {
   display: none;
 }
 
-.navbar .bar {
+.navbar .hamburger:hover {
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
   background-color: black;
   border-radius: 10px;
   height: 4px;
   margin: 3px;
+  transition: transform 0.3s;
   width: 36px;
+}
+
+.animateBar1 {
+  transform: rotate(45deg) translate(4px, 10px);
+}
+
+.animateBar2 {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.animateBar3 {
+  transform: rotate(-45deg) translate(4px, -10px);
+}
+
+.mobile-nav {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding: 16px;
+  position: fixed;
+  right: -160px;
+  top: 0;
+  transition: transform 0.3s;
+  width: 80px;
+  z-index: 1;
+}
+
+.mobile-nav img {
+  height: 24px;
+  width: 24px;
+}
+
+.open-mobile-nav {
+  transform: translateX(-160px);
+}
+
+.mobile-nav a {
+  color: black;
+  margin: 16px 0;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  text-decoration: underline;
 }
 
 .project-grid {
@@ -176,7 +231,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
   }
   .navbar .right {
     display: none;
@@ -206,3 +261,49 @@ body {
     padding: 32px;
   }
 }
+
+/* Hamburger menu using animations instead of transitions 
+
+ .animateBar1 {
+  animation: rotateBar1 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar2 {
+  animation: fadeBar2 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar3 {
+  animation: rotateBar3 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotateBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -10px);
+  }
+} */
